@@ -1,0 +1,237 @@
+:root {
+  --bg: #f6f6fb;
+  --white: #ffffff;
+  --text-main: #262633;
+  --text-muted: #6b6b80;
+  --accent: #c8558e;
+  --accent-soft: #f9e1ee;
+  --border-soft: #e0e0f0;
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Hiragino Sans",
+    "Yu Gothic", "Noto Sans JP", sans-serif;
+  color: var(--text-main);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1100px, 100% - 32px);
+  margin-inline: auto;
+}
+
+/* header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(246, 246, 251, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 10px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.nav a {
+  margin-left: 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* hero */
+
+.hero {
+  padding: 72px 0 56px;
+}
+
+.hero-salon {
+  background: radial-gradient(circle at top right, #f9e1ee, #f6f6fb);
+}
+
+.hero-inner {
+  max-width: 640px;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: var(--text-muted);
+}
+
+/* sections */
+
+.section {
+  padding: 48px 0;
+}
+
+.section-gray {
+  background: var(--accent-soft);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* cards */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--white);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(20, 20, 34, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* plans */
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.plan {
+  background: var(--white);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(20, 20, 34, 0.08);
+}
+
+.plan-price {
+  font-weight: 700;
+  margin: 4px 0 10px;
+}
+
+.plan-note {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* flow */
+
+.flow-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flow-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.flow-list span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 22px;
+}
+
+/* faq */
+
+.faq-item + .faq-item {
+  margin-top: 14px;
+}
+
+.faq-item h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+/* contact & footer */
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.contact-list li {
+  margin-bottom: 4px;
+}
+
+.site-footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* responsive */
+
+@media (max-width: 720px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+}
